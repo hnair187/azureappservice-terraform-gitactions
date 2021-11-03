@@ -1,2 +1,2 @@
 # azuregitactionsdemo
-Trying to develop an end to end deployment of a kubernetes cluster to azure kubernetes service using github actions
+Creating a module for Azure app services and trying to deploy it through GitHub Actions.

@@ -95,7 +95,7 @@ jobs:
            TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
        - name: Terraform Apply
          id: Apply
-         run: terraform apply 
+         run: terraform apply --auto-approve
          continue-on-error: true    
          env:
            TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }} 
@@ -105,7 +105,7 @@ jobs:
        
        - name: Terraform Destroy
          id: delete
-         run: terraform destroy
+         run: terraform destroy --auto-approve
          continue-on-error: false
          env:
            TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }} 

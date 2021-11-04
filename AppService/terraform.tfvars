@@ -1,7 +1,3 @@
-subscription_id = "e0937317-db67-4071-8ecb-3abfd5dc49be"
-client_id = "14827149-e029-48d8-b36b-0f6dfab6eee9"
-tenant_id = "f1c86f07-9369-47ce-adf2-639ffe43cc2f"
-client_secret = "eRp7Q~xT7amJzRTcVCm7nbHV7riDFrPOo-OtB"
 resourcename       = "azureesourcegroup1"
 location           = "Central US"
 storagename        = "azurestoragegrouphiral"

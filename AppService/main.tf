@@ -54,3 +54,4 @@ resource "azurerm_app_service" "appservicedemo1" {
     value = "Server=some-server.mydomain.com;Integrated Security=SSPI"
   }
 }
+

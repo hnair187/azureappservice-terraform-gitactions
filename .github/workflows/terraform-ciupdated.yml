@@ -94,9 +94,9 @@ jobs:
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
        
-       - name: Terraform Delete
+       - name: Terraform Destroy
          id: delete
-         run: terraform delete
+         run: terraform destroy
          continue-on-error: false
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

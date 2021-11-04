@@ -1,3 +1,15 @@
+variable "subscription_id" {
+  default = ""
+}
+variable "client_id" {
+  default = ""
+}
+variable "client_secret" {
+  default = ""
+}
+variable "tenant_id" {
+  default = ""
+}
 variable "resourcename" {
   description = "this is a resourcegroup"
   type        = string
@@ -21,4 +33,8 @@ variable "appserviceplanname" {
 }
 variable "appservicename" {
   type = string
+}
+
+variable "env" {
+  default = ""
 }

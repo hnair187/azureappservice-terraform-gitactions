@@ -76,6 +76,11 @@ jobs:
          run: terraform init
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       
+       - name: Terraform Format
+         id: format
+         run: terraform fmt 
+       
        - name: Terraform Validate
          id: validate
          run: terraform validate 
@@ -86,9 +91,16 @@ jobs:
          continue-on-error: true    
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-       - name: Terraform APPLY
+       - name: Terraform Apply
          id: Apply
-         run: terraform apply -auto-approve 
+         run: terraform apply 
          continue-on-error: true    
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+       
+       - name: Terraform Delete
+         id: delete
+         run: terraform delete
+         continue-on-error: false
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

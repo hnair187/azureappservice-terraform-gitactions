@@ -57,10 +57,6 @@ jobs:
          os: [macOS-latest, windows-latest, ubuntu-latest]
      
 
-     defaults:
-       run:
-         shell: bash
-
      env:
        TF_VAR_client_id: ${{ secrets.TF_VAR_client_id }} 
        TF_VAR_client_secret: ${{ secrets.TF_VAR_client_secret }} 

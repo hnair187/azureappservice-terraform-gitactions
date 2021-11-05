@@ -1,4 +1,4 @@
-# azuregitactionsdemo
+# AzureAppServiceTerraform
 Creating a module for Azure app services and trying to deploy it through GitHub Actions.
 
 1. Provider.tf is being used to define the terraform version and the cloud provider which we will be using.

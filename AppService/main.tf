@@ -1,7 +1,7 @@
 /*resource "azurerm_resource_group" "resource1" {
   name     = var.resourcename
   location = var.location
-  tags     = var.tags
+  #tags     = var.tags
 }*/
 
 resource "azurerm_storage_account" "storage" {

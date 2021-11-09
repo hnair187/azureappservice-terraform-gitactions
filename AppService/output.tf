@@ -1,11 +1,11 @@
-output "resourcegroupid" {
+/*utput "resourcegroupid" {
   value = azurerm_resource_group.resource1.id
 }
 
 output "resourcegroupname" {
   value = azurerm_resource_group.resource1.name
 }
-
+*/
 output "storageaccount" {
   value = azurerm_storage_account.storage.name
 }

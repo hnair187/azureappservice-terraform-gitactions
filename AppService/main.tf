@@ -22,8 +22,8 @@ resource "azurerm_storage_container" "storagecontainer" {
 
 resource "azurerm_app_service_plan" "appserviceplandemo1" {
   name                = var.appserviceplanname
-  location            = azurerm_resource_group.resource1.location
-  resource_group_name = azurerm_resource_group.resource1.name
+  location            = var.location
+  resource_group_name = var.resourcename
   kind                = "Linux"
   reserved            = true
 

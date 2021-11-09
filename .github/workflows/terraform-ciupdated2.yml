@@ -68,16 +68,23 @@ jobs:
        TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }} 
 
      steps:
-       # - name: 'Checkout'
-       - uses: actions/checkout@master
-       - name: 'Terraform Init'
+       - name: 'Checkout'
+         uses: actions/checkout@v2
+       #- name: 'Terraform Init'
          # uses: hashicorp/terraform-github-actions@master
-         id: init
-         run: terraform init
+         #id: init
+         #run: terraform init
+       
+       - name: Setup Terraform
+         uses: hashicorp/setup-terraform@v1
        
        - name: Terraform Format
          id: format
          run: terraform fmt 
+       
+       - name: Terraform Init
+         id: init
+         run: terraform init
        
        - name: Terraform Validate
          id: validate
@@ -96,7 +103,7 @@ jobs:
           with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
             script: |
-              const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+              const output = `#### Terraform Format and Style 🖌\`${{ steps.format.outcome }}\`
               #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
               #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
@@ -130,7 +137,7 @@ jobs:
          run: terraform apply --auto-approve
           
 
-       - name: Terraform Destroy
-         id: destroy
-         run: terraform destroy --auto-approve
-         continue-on-error: false
+       #- name: Terraform Destroy
+         #id: destroy
+         #run: terraform destroy --auto-approve
+         #continue-on-error: false

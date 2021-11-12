@@ -41,7 +41,7 @@
 #       uses: hashicorp/setup-terraform@v1
 #       with:
 #hello
-#         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+##        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
 name: 'Terraform GitHub Actions'
 defaults:
@@ -137,8 +137,8 @@ jobs:
          run: terraform apply --auto-approve
           
 
-       - name: Terraform Destroy
-         id: destroy
-         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-         run: terraform destroy --auto-approve
-         continue-on-error: false
+      #  - name: Terraform Destroy
+      #    id: destroy
+      #    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #    run: terraform destroy --auto-approve
+      #    continue-on-error: false

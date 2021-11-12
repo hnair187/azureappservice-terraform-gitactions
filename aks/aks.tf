@@ -6,8 +6,8 @@ resource "azurerm_resource_group" "aksrg" {
 module "network" {
   source              = "Azure/network/azurerm"
   resource_group_name = var.resource_group_name
-  address_space       = "11.0.0.0/16"
-  subnet_prefixes     = ["11.0.1.0/24"]
+  address_space       = "10.0.0.0/16"
+  subnet_prefixes     = ["10.0.1.0/24"]
   subnet_names        = ["akssubnet1"]
   depends_on          = [azurerm_resource_group.aksrg]
 }
@@ -21,7 +21,7 @@ module "aks" {
   orchestrator_version             = var.kubernetes_version
   prefix                           = "prefix"
   cluster_name                     = var.cluster_name
-  network_plugin                   = "azure"
+  network_plugin                   = "kubenet"
   vnet_subnet_id                   = module.network.vnet_subnets[0]
 #  os_disk_size_gb                  = 50
   sku_tier                         = "Free" # defaults to Free
@@ -49,10 +49,10 @@ module "aks" {
     "Agent" : "defaultnodepoolagent"
   }
 
-  network_policy                 = "azure"
-  net_profile_dns_service_ip     = "11.0.0.10"
+  network_policy                 = "kubenet"
+  net_profile_dns_service_ip     = "10.0.0.10"
   net_profile_docker_bridge_cidr = "170.10.0.1/16"
-  net_profile_service_cidr       = "11.0.0.0/16"
+  net_profile_service_cidr       = "10.0.0.0/16"
 
   depends_on = [module.network]
 }

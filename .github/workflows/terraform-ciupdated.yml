@@ -45,7 +45,7 @@
 name: 'Terraform GitHub Actions'
 defaults:
     run:
-      working-directory: "AppService"
+      working-directory: "aks"
 
 on:
     pull_request:

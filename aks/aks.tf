@@ -37,7 +37,7 @@ module "aks" {
   agents_max_count                 = var.node_max_count
   agents_count                     = var.system_node_count # Please set `agents_count` `null` while `enable_auto_scaling` is `true` to avoid possible `agents_count` changes.
   agents_max_pods                  = var.max_pods
-  agents_pool_name                 = "sdm-nodepool" #3nodepools 
+  agents_pool_name                 = "sdmnodepool" #3nodepools 
   agents_availability_zones        = ["1", "2", "3"]
   agents_type                      = "VirtualMachineScaleSets"
 

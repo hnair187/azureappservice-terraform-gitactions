@@ -133,7 +133,8 @@ jobs:
 
        - name: Terraform Apply
          id: Apply
-         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+         needs: [planstatus]
+        #  if: github.ref == 'refs/heads/main' && github.event_name == 'push'
          run: terraform apply --auto-approve
          
           

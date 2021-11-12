@@ -131,15 +131,15 @@ jobs:
          if: steps.plan.outcome == 'failure'
          run: exit 1
 
-      #  - name: Terraform Apply
-      #    id: Apply
-      #    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      #    run: terraform apply --auto-approve
+       - name: Terraform Apply
+         id: Apply
+         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+         run: terraform apply --auto-approve
          
           
 
-       - name: Terraform Destroy
-         id: destroy
-         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-         run: terraform destroy --auto-approve
-         continue-on-error: false
+      #  - name: Terraform Destroy
+      #    id: destroy
+      #    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #    run: terraform destroy --auto-approve
+      #    continue-on-error: false

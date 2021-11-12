@@ -1,3 +1,15 @@
+variable "subscription_id" {
+  default = ""
+}
+variable "client_id" {
+  default = ""
+}
+variable "client_secret" {
+  default = ""
+}
+variable "tenant_id" {
+  default = ""
+}
 variable "resource_group_name" {
   type        = string
   description = "RG name in Azure"

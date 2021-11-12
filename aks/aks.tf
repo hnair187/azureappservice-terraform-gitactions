@@ -21,7 +21,7 @@ module "aks" {
   orchestrator_version             = var.kubernetes_version
   prefix                           = "prefix"
   cluster_name                     = var.cluster_name
-  network_plugin                   = "kubenet"
+  network_plugin                   = "azure"
   vnet_subnet_id                   = module.network.vnet_subnets[0]
 #  os_disk_size_gb                  = 50
   sku_tier                         = "Free" # defaults to Free

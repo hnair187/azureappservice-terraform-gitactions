@@ -21,7 +21,7 @@ module "aks" {
   orchestrator_version             = var.kubernetes_version
   prefix                           = "prefix"
   cluster_name                     = var.cluster_name
-  network_plugin                   = "kubenet"
+  network_plugin                   = "azure"
   vnet_subnet_id                   = module.network.vnet_subnets[0]
 #  os_disk_size_gb                  = 50
   sku_tier                         = "Free" # defaults to Free
@@ -50,9 +50,9 @@ module "aks" {
   }
 
   network_policy                 = "azure"
-  net_profile_dns_service_ip     = "10.0.0.10"
-  net_profile_docker_bridge_cidr = "170.10.0.1/16"
-  net_profile_service_cidr       = "10.0.0.0/16"
+  # net_profile_dns_service_ip     = "10.0.0.10"
+  # net_profile_docker_bridge_cidr = "170.10.0.1/16"
+  # net_profile_service_cidr       = "10.0.0.0/16"
 
   depends_on = [module.network]
 }

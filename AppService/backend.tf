@@ -1,8 +1,8 @@
-/*terraform {
+terraform {
   backend "azurerm" {
-    resource_group_name  = "pwc-terraform-state"
-    storage_account_name = "tfstatepwcswdelivery"
-    container_name       = "tfstate"
+    resource_group_name  = "Product_Zero_DevOps"
+    storage_account_name = "productzerostorage"
+    container_name       = "sdm-pwc-container"
     key                  = "appservicedev.terraform.tfstate"
   }
-}*/
+}

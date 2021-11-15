@@ -5,7 +5,7 @@ resource "azurerm_storage_account" "storage" {
   account_tier             = "Standard"
   account_replication_type = "GRS"
 
-  tags = var.tags
+  # tags = var.tags
 }
 
 resource "azurerm_storage_container" "storagecontainer" {

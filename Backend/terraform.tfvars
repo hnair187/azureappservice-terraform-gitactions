@@ -1,4 +1,4 @@
 resourcegroupname = "Product_Zero_DevOps"
 location           = "East US"
-storagename        = "productzerostorage"
+storagename        = "productzerotfstorage"
 containername      = "sdm-pwc-container"

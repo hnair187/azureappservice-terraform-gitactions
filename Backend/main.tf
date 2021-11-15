@@ -11,7 +11,7 @@
 resource "azurerm_storage_container" "storagecontainer" {
   name                  = var.containername
   storage_account_name  = var.storagename
-  container_access_type = "private"
+  container_access_type = "blob"
 }
 
 

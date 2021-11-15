@@ -17,9 +17,9 @@ variable "resourcegroupname" {
 variable "location" {
   type = string
 }
-variable "tags" {
+/*variable "tags" {
   type = map(any)
-}
+}*/
 
 variable "storagename" {
   type = string

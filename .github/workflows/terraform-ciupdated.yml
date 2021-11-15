@@ -45,7 +45,7 @@
 name: 'Terraform GitHub Actions'
 defaults:
     run:
-      working-directory: "Backend"
+      working-directory: "AppService"
 
 on:
     pull_request:
